@@ -1,1 +1,46 @@
-# gitlab-hw
+
+# GitLab - Домашнее задание
+## Романова Лариса
+
+### Задание 1
+**Что нужно было сделать:**
+Развернуть GitLab локально, создать проект, зарегистрировать GitLab Runner в режиме Docker.
+
+### Выполнение задания
+
+#### Этап 1: Попытки развертывания локального GitLab
+Было предпринято несколько попыток развертывания GitLab:
+
+1. **Yandex Cloud VM** - постоянные зависания Docker
+2. **Локальная установка** - зависания на этапе настройки
+3. **Vagrant** - проблемы с репозиториями
+4. **Docker Compose** - ошибки и зависания
+
+Из-за технических проблем было принято решение использовать GitLab.com
+
+#### Этап 2: Работа с GitLab.com
+- Создан проект: https://gitlab.com/Lar02.04-kft/test-project
+- Установлен и зарегистрирован GitLab Runner
+- Настроен CI/CD пайплайн
+
+#### Доказательства выполнения:
+
+**1. GitLab Runner зарегистрирован:**
+```bash
+sudo gitlab-runner list
+
+stages:
+  - test
+  - build
+
+test-job:
+  stage: test
+  image: alpine:latest
+  script:
+    - echo "Hello from GitLab Runner!"
+
+build-job:
+  stage: build  
+  image: docker:latest
+  script:
+    - echo "Building project..."
