@@ -66,8 +66,3 @@ build:
   script:
     - echo "Building application"
 
-**Доказательства выполнения:**
-![GitLab Pipeline](pipeline.png)
-![CI/CD Configuration](pipeline-config.png)
-    - echo "Build completed successfully"
-    - docker --version
